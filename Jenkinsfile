@@ -3,23 +3,22 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'npm install -g yarn'
-        sh 'yarn'
+        sh 'npm i'
       }
     }
     stage('Build') {
       steps {
-        sh 'yarn build'
+        sh 'npm run build'
       }
     }
     stage('Test') {
       steps {
-        sh 'yarn test'
+        sh 'npm run test'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'yarn start'
+        sh 'npm run start'
       }
     }
   }
