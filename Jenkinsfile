@@ -17,15 +17,10 @@ pipeline {
         sh 'npm run test'
       }
     }
-    stage('CreateDockerImages') {
+    stage('Deploy') {
       steps {
-        sh 'docker build -t next-app-1_image -f Dockerfile .'
+        sh 'npm run start'
       }
     }
-    // stage('Deploy') {
-    //   steps {
-    //     sh 'npm run start'
-    //   }
-    // }
   }
 }
