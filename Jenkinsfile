@@ -22,10 +22,10 @@ pipeline {
         sh 'docker build -t next-app-1_image -f Dockerfile .'
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'npm run start'
-      }
-    }
+    // stage('Deploy') {
+    //   steps {
+    //     sh 'npm run start'
+    //   }
+    // }
   }
 }
