@@ -79,5 +79,11 @@ pipeline {
     always {
       echo 'I will always run regardless of any of the above stages pass or fail.'
     }
+    failure {
+      echo 'Failure'
+    }
+    success {
+      echo 'Success'
+    }
   }
 }
