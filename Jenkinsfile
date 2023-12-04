@@ -23,14 +23,14 @@ pipeline {
       steps {
         sh 'echo "Build ID: ${BUILD_ID}"'
         sh 'echo "Name: $NAME"'
-        sh 'echo "Username: $USERNAME'
+        sh 'echo "Username: $USERNAME"'
       }
     }
     stage('Build') {
       steps {
         sh 'npm run build'
         sh 'echo "Name: $NAME"'
-        sh 'echo "Username: $USERNAME'
+        sh 'echo "Username: $USERNAME"'
       }
     }
     stage('Test') {
