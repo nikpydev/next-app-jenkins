@@ -3,6 +3,13 @@ pipeline {
   environment {
     NAME = 'Nikhil'
   }
+  parameters {
+    string(
+      name: 'person', 
+      defaultValue: 'Nikhil Choudhary', 
+      description: 'Who are you?'
+    )
+  }
   tools {nodejs 'NodeJS-01'}
   stages {
     stage('Install') {
@@ -24,6 +31,11 @@ pipeline {
         sh 'echo "Build ID: ${BUILD_ID}"'
         sh 'echo "Name: $NAME"'
         sh 'echo "Username: $USERNAME"'
+      }
+    }
+    stage('Parameter') {
+      steps {
+        sh 'echo "person: $person"'
       }
     }
     stage('Build') {
