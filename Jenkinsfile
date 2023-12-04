@@ -69,10 +69,15 @@ pipeline {
         sh 'npm run test'
       }
     }
-    // stage('Deploy') {
-    //   steps {
-    //     sh 'npm run start'
-    //   }
-    // }
+    stage('Deploy') {
+      steps {
+        sh 'docker build -t next-app-jenkins -f Dockerfile .'
+      }
+    }
+    post {
+      always {
+        echo 'I will always run regardless of any of the above stages pass or fail.'
+      }
+    }
   }
 }
