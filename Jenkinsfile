@@ -14,7 +14,7 @@ pipeline {
       }
     }
     stage('Environment Variables') {
-      steps: {
+      steps {
         sh 'echo "${BUILD_ID}"'
       }
     }
