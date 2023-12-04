@@ -48,6 +48,15 @@ pipeline {
         sh 'echo "person: $person"'
       }
     }
+    stage('Continue ?') {
+      input {
+        message 'Continue forward?'
+        ok 'Yes we should!'
+      }
+      steps {
+        //
+      }
+    }
     stage('Build') {
       steps {
         sh 'npm run build'
