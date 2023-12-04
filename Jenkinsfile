@@ -9,6 +9,11 @@ pipeline {
       defaultValue: 'Nikhil Choudhary', 
       description: 'Who are you?'
     )
+    booleanParam(
+      name: 'isMale',
+      defaultValue: true,
+      description: 'Are you male?'
+    )
   }
   tools {nodejs 'NodeJS-01'}
   stages {
