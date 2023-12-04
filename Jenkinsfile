@@ -14,6 +14,11 @@ pipeline {
       defaultValue: true,
       description: 'Are you male?'
     )
+    choice(
+      name: 'city',
+      choices: ['Jaipur', 'Mumbai', 'Pune'],
+      description: 'Which city are you from?'
+    )
   }
   tools {nodejs 'NodeJS-01'}
   stages {
