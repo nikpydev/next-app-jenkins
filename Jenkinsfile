@@ -69,6 +69,23 @@ pipeline {
         sh 'npm run test'
       }
     }
+    stage("A"){
+        steps{
+            echo "====++++executing A++++===="
+        }
+        post{
+            always{
+                echo "====++++always++++===="
+            }
+            success{
+                echo "====++++A executed successfully++++===="
+            }
+            failure{
+                echo "====++++A execution failed++++===="
+            }
+    
+        }
+    }
     stage('Deploy') {
       steps {
         // sh 'docker build -t next-app-jenkins -f Dockerfile .'
