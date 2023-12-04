@@ -5,6 +5,17 @@ pipeline {
     stage('Install') {
       steps {
         sh 'npm i'
+        sh '''
+          ls
+          date
+          pwd
+          cal 2023
+        '''
+      }
+    }
+    stage('Environment Variables') {
+      steps: {
+        sh 'echo "$BUILD_ID"'
       }
     }
     stage('Build') {
