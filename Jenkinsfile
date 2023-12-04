@@ -17,14 +17,20 @@ pipeline {
       }
     }
     stage('Environment Variables') {
+      environment {
+        USERNAME = 'Nikhil'
+      }
       steps {
         sh 'echo "Build ID: ${BUILD_ID}"'
         sh 'echo "Name: $NAME"'
+        sh 'echo "Username: $USERNAME'
       }
     }
     stage('Build') {
       steps {
         sh 'npm run build'
+        sh 'echo "Name: $NAME"'
+        sh 'echo "Username: $USERNAME'
       }
     }
     stage('Test') {
