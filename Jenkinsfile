@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  tools {nodejs "NodeJS-01"}
+  enviromnent {
+    NAME = 'Nikhil'
+  }
+  tools {nodejs 'NodeJS-01'}
   stages {
     stage('Install') {
       steps {
@@ -15,7 +18,8 @@ pipeline {
     }
     stage('Environment Variables') {
       steps {
-        sh 'echo "${BUILD_ID}"'
+        sh 'echo "Build ID: ${BUILD_ID}"'
+        sh 'echo "Name: $NAME"'
       }
     }
     stage('Build') {
@@ -28,10 +32,10 @@ pipeline {
         sh 'npm run test'
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'npm run start'
-      }
-    }
+    // stage('Deploy') {
+    //   steps {
+    //     sh 'npm run start'
+    //   }
+    // }
   }
 }
