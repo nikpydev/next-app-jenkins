@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  enviromnent {
+  environment {
     NAME = 'Nikhil'
   }
   tools {nodejs 'NodeJS-01'}
