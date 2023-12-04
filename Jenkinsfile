@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Environment Variables') {
       steps: {
-        sh 'echo "$BUILD_ID"'
+        sh 'echo "${BUILD_ID}"'
       }
     }
     stage('Build') {
