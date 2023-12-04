@@ -74,10 +74,10 @@ pipeline {
         sh 'docker build -t next-app-jenkins -f Dockerfile .'
       }
     }
-    post {
-      always {
-        echo 'I will always run regardless of any of the above stages pass or fail.'
-      }
+  }
+  post {
+    always {
+      echo 'I will always run regardless of any of the above stages pass or fail.'
     }
   }
 }
