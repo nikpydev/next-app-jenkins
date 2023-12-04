@@ -54,7 +54,7 @@ pipeline {
         ok 'Yes we should!'
       }
       steps {
-        //
+        sh 'echo "Continue stage"'
       }
     }
     stage('Build') {
