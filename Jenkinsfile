@@ -71,7 +71,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker build -t next-app-jenkins -f Dockerfile .'
+        // sh 'docker build -t next-app-jenkins -f Dockerfile .'
+        sh 'echo "Deploy stage"'
       }
     }
   }
